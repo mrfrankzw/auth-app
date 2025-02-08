@@ -38,7 +38,8 @@ document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
 
     const result = await response.json();
     if (response.ok) {
-      window.location.href = "http://wa.me/263719647303?text=Salute+Mr+Frank";
+      alert("Login successful! Redirecting...");
+      window.location.href = "http://d.com"; // Redirect to d.com
     } else {
       alert(result.error);
     }
