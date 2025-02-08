@@ -34,6 +34,7 @@ router.post("/signup", async (req, res) => {
       password: password, // Note: In production, never send passwords back!
     });
   } catch (err) {
+    console.error("Error during signup:", err);
     res.status(500).json({ error: "Error creating user" });
   }
 });
@@ -47,14 +48,23 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   try {
+    // Find the user by username
     const user = await User.findOne({ username });
-    if (user && (await bcrypt.compare(password, user.password))) {
-      res.redirect("http://wa.me/263719647303?text=Mr+Frank+Salute+You"); // Redirect to d.com on successful login
-    } else {
-      res.status(400).json({ error: "Invalid credentials" });
+    if (!user) {
+      return res.status(400).json({ error: "User not found" });
     }
+
+    // Compare the provided password with the hashed password
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+
+    // If everything is correct, redirect to d.com
+    res.status(200).json({ message: "Login successful" });
   } catch (err) {
-    res.status(500).json({ error: "Error logging in" });
+    console.error("Error during login:", err);
+    res.status(500).json({ error: "An error occurred during login" });
   }
 });
 
