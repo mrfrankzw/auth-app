@@ -3,6 +3,16 @@ const router = express.Router();
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 
+// Serve Dashboard
+router.get("/", (req, res) => {
+  res.sendFile("dashboard.html", { root: "./public" });
+});
+
+// Serve Deploy
+router.get("/", (req, res) => {
+  res.sendFile("deploy.html", { root: "./public" });
+});
+
 // Serve Home Page
 router.get("/", (req, res) => {
   res.sendFile("home.html", { root: "./public" });
