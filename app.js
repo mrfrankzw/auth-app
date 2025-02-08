@@ -53,7 +53,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Routes
-app.use("/", dashboardRoutes); // Mount dashboard routes at /dash
+app.use("/dash", dashboardRoutes); // Mount dashboard routes at /dash
 app.use("/", authRoutes); // Mount auth routes at the root
 
 const PORT = process.env.PORT || 3000;
