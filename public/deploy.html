@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy Subzero Md 100% free</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Graduate&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Graduate', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, rgba(135, 206, 235, 1), rgba(135, 206, 235, 0.2));
+            transition: background 0.5s ease, color 0.5s ease;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-top: 20px;
+            color: #15f5ff;
+            text-shadow: 0 0 10px #0072ff, 0 0 20px #001f3f;
+            animation: slide-down 1s ease-out forwards;
+        }
+
+        @keyframes slide-down {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .dark-mode {
+            background: linear-gradient(to bottom, #002b50, #001b33);
+            color: white;
+        }
+
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.7);
+            transition: background 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: calc(100% - 40px);
+            padding: 10px 10px 10px 40px;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+            background: #f9f9f9;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.5s ease;
+        }
+
+        .input-group input:focus {
+            box-shadow: 0 0 10px rgba(0, 170, 255, 0.7);
+            outline: none;
+        }
+
+        .input-group .icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #888;
+        }
+
+        button[type="button"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button[type="button"]:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #0072ff;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            z-index: 1000;
+        }
+
+        #mode-toggle:hover {
+            background: #00c6ff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(173, 216, 230, 0.8);
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px 15px 0 0;
+            transition: background 0.5s ease;
+        }
+
+        footer .social-icons {
+            margin: 10px 0;
+        }
+
+        footer .social-icons a {
+            color: #555;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #0072ff;
+        }
+    </style>
+</head>
+<body>
+    <button id="mode-toggle">Dark Mode</button>
+    <h1>DEPLOY SUBZERO</h1>
+    <form id="deployment-form">
+        <div class="input-group">
+            <i class="fas fa-box icon"></i>
+            <input type="text" id="appName" name="appName" placeholder="App Name">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope icon"></i>
+            <input type="email" id="herokuEmail" name="herokuEmail" placeholder="Heroku Email">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-comment icon"></i>
+            <input type="text" id="gitCommitMsg" name="gitCommitMsg" placeholder="Git Commit Message">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-code-branch icon"></i>
+            <input type="text" id="gitBranch" name="gitBranch" placeholder="Git Branch">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-id-badge icon"></i>
+            <input type="text" id="sessionId" name="sessionId" placeholder="Session ID">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-robot icon"></i>
+            <input type="text" id="botName" name="botName" placeholder="Bot Name">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-phone icon"></i>
+            <input type="text" id="ownerNumber" name="ownerNumber" placeholder="Owner Number">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-user icon"></i>
+            <input type="text" id="ownerName" name="ownerName" placeholder="Owner Name">
+        </div>
+        <button id="submit-btn" type="button">Deploy</button>
+    </form>
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/mrfrank-ofc" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100076324647092" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://whatsapp.com/channel/0029VagQEmB002T7MWo3Sj1D" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/mrfrankofc" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; Mr Frank || 2025 MegaMindz Creations</p>
+    </footer>
+    <script>
+        const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            modeToggle.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
+    </script>
+</body>
+</html>
