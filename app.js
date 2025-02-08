@@ -32,7 +32,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
-const dashboardRoutes = require("./routes/dashboard");
+const dashboardRoutes = require("./routes/deploy");
 
 dotenv.config();
 
@@ -53,7 +53,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Routes
-app.use("/dash", dashboardRoutes); // Mount dashboard routes at /dash
+app.use("/deploy", dashboardRoutes); // Mount dashboard routes at /dash
 app.use("/", authRoutes); // Mount auth routes at the root
 
 const PORT = process.env.PORT || 3000;
