@@ -39,7 +39,7 @@ document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
     const result = await response.json();
     if (response.ok) {
       alert("Login successful! Redirecting...");
-      window.location.href = "http://d.com"; // Redirect to d.com
+      window.location.href = "http://mrfrankinc.vercel.app"; // Redirect to d.com
     } else {
       alert(result.error);
     }
