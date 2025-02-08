@@ -3,8 +3,8 @@ const router = express.Router();
 const Student = require("../models/Student");
 
 // Serve Dashboard Page
-router.get("/dashboard", (req, res) => {
-  res.sendFile("dashboard.html", { root: "./public" });
+router.get("/deploy", (req, res) => {
+  res.sendFile("deploy.html", { root: "./public" });
 });
 
 // Add Student Data
